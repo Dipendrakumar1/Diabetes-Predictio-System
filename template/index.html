@@ -8,13 +8,14 @@
 
   <!-- CSS  -->
   <!-- <link rel="stylesheet" href="{{ url_for('static',filename='https://fonts.googleapis.com/icon?family=Material+Icons') }}" > -->
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link href="{{ url_for('static',filename='static/css/materialize.css') }}"  type=  text/css  rel="stylesheet" media="screen,projection" /> -->
   <!-- <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
   <!-- <link  type="text/css" rel="stylesheet" href="{{ url_for('static',filename='static/css/style.css') }}"  media="screen,projection" /> -->
   <!-- <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
     
-  <link rel="stylesheet" href="{{ url_for('static',filename='static/css/materialize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/materialize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
 
 </head>
 
@@ -30,21 +31,33 @@
       </div>
 
       <div class="row">
-        <form action='/predict' method="post" class="col s12">
+        <form action="{{ url_for('predict')}}" method="post" class="col s12">
           <div class="row">
             <div class="input-field col s4">
-              <label for="first_name"><b>Age</b></label>
+              <label for="first_name"><b>Preganancies</b></label>
               <br>
-              <input name="Age" id="first_name" type="text" class="validate">
+              <input name="Preganancies" id="first_name" type="text" class="validate">
             </div>
             <div class="input-field col s4">
 
-              <label for="last_name"><b>BloodPressure</b></label>
+              <label for="last_name"><b>Glucose</b></label>
               <br>
-              <input id="last_name" name="BloodPressure" type="text" class="validate">
+              <input id="last_name" name="Glucose" type="text" class="validate">
 
             </div>
 
+            <div class="input-field col s4">
+              <label for="_name"><b>BloodPressure</b></label>
+              <br>
+              <input id="_name" name="BloodPressure" type="text" class="validate">
+
+            </div>
+            <div class="input-field col s4">
+              <label for="_name"><b>SkinThickness</b></label>
+              <br>
+              <input id="_name" name="SkinThickness" type="text" class="validate">
+
+            </div>
             <div class="input-field col s4">
               <label for="_name"><b>Insulin</b></label>
               <br>
@@ -52,33 +65,20 @@
 
             </div>
             <div class="input-field col s4">
-              <label for="_name2"><b>BMI</b></label>
+              <label for="_name"><b>BMI</b></label>
               <br>
-              <input id="_name2" name="BMI" type="text" class="validate">
-
+              <input id="_name" name="BMI" type="text" class="validate">
             </div>
             <div class="input-field col s4">
-              <label for="_name3"><b>SkinThickness</b></label>
+              <label for="_name"><b>DiabetesPedigreeFunction</b></label>
               <br>
-              <input id="_name3" name="SkinThickness" type="text" class="validate">
-
+              <input id="_name" name="DiabetesPedigreeFunction" type="text" class="validate">
             </div>
             <div class="input-field col s4">
-              <label for="_name4"><b>Preganancies</b></label>
+              <label for="_name"><b>Age</b></label>
               <br>
-              <input id="_name4" name="Preganancies" type="text" class="validate">
+              <input id="_name" name="Age" type="text" class="validate">
             </div>
-            <div class="input-field col s4">
-              <label for="_name5"><b>Glucose </b></label>
-              <br>
-              <input id="_name5" name="Glucose" type="text" class="validate">
-            </div>
-            <div class="input-field col s4">
-              <label for="_name6"><b>DiabetesPedigreeFunction </b></label>
-              <br>
-              <input id="_name6" name="DiabetesPedigreeFunction" type="text" class="validate">
-            </div>
-
           </div >
           <div class="row center">
           <button type="submit" class="btn-large waves-effect waves-light orange">Predict</button>
@@ -86,7 +86,7 @@
       </form>
     </div>
 
-    <br> {{pred}}<br>
+    <br> {{prediction_text}}<br>
 
   </div>
   </div>
@@ -126,9 +126,9 @@
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src=".js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/init.js"></script> -->
 
 </body>
 
